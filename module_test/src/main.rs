@@ -44,8 +44,18 @@ mod plant {
     }
 }
 
+mod menu {
+    pub enum Appetizer {
+        Soup,
+        Salad,
+    }
+}
+
 fn main() {
     let mut v = plant::Vegetable::new("squash");
     v.name = String::from("butternut Squash");
-    println!("zz {}", v.name)
+    println!("zz {}", v.name);
+
+    let order1 = menu::Appetizer::Soup;
+    let order2 = menu::Appetizer::Salad;
 }
