@@ -117,7 +117,11 @@ mod sound {
 }
 
 use crate::sound::instrument::clarinet;
+use std::collections::HashMap;
 
 fn main() {
     clarinet();
+    let mut map = HashMap::new();
+    map.insert(1, 2);
 }
+
