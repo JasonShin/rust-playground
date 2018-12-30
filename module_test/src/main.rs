@@ -108,6 +108,7 @@ fn main() {
 
 // Idiomatic invocation
 
+/*
 mod sound {
     pub mod instrument {
         pub fn clarinet() {
@@ -124,4 +125,24 @@ fn main() {
     let mut map = HashMap::new();
     map.insert(1, 2);
 }
+*/
 
+// Renaming Types Brought into scope using `as`
+/* use std::fmt::Result;
+use std::io::Result as IoResult;
+
+fn function1() -> Result {
+
+}
+
+fn function2() -> IoResult<()> {
+
+}
+*/
+
+// use std::collections::*; // loads everything!
+
+mod sound;
+fn main() {
+    crate::sound::instrument::clarinet();
+}
