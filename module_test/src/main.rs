@@ -63,6 +63,8 @@ fn main() {
 */
 
 // Using Use to shorten path
+
+/*
 mod sound {
     pub mod instrument {
         pub fn clarinet() {
@@ -71,8 +73,51 @@ mod sound {
     }
 }
 
-use crate::sound::instrument;
+// use crate::sound::instrument;
+use self::sound::instrument;
 
 fn main() {
     instrument::clarinet();
+}
+*/
+
+/*
+mod sound {
+    pub mod instrument {
+        pub fn clarinet() {
+            // Function body code goes here
+            println!("Clarinet!!");
+        }
+    }
+}
+
+mod performance_group {
+    use crate::sound::instrument;
+
+    pub fn clarinet_trio() {
+        instrument::clarinet();
+        instrument::clarinet();
+        instrument::clarinet();
+    }
+}
+
+fn main() {
+    performance_group::clarinet_trio();
+}
+*/
+
+// Idiomatic invocation
+
+mod sound {
+    pub mod instrument {
+        pub fn clarinet() {
+            println!("testing!");
+        }
+    }
+}
+
+use crate::sound::instrument::clarinet;
+
+fn main() {
+    clarinet();
 }
