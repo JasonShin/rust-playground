@@ -28,6 +28,7 @@ fn main() {
 }
 */
 
+/*
 mod plant {
     pub struct Vegetable {
         pub name: String,
@@ -58,4 +59,20 @@ fn main() {
 
     let order1 = menu::Appetizer::Soup;
     let order2 = menu::Appetizer::Salad;
+}
+*/
+
+// Using Use to shorten path
+mod sound {
+    pub mod instrument {
+        pub fn clarinet() {
+            println!("Called clarinet");
+        }
+    }
+}
+
+use crate::sound::instrument;
+
+fn main() {
+    instrument::clarinet();
 }
