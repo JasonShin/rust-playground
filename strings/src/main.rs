@@ -57,4 +57,19 @@ fn main() {
     println!("Hola len {}", len);
     let len = String::from("Здравствуйте").len();
     println!("Rus len {}", len);
+
+    // Slicing
+    let hello = "abcd";
+    let s = &hello[0..2];
+    println!("slicing {}", s);
+
+    // Iterating a string
+    for c in "नमस्ते".chars() {
+        println!("{}", c);
+    }
+
+    // Iterating bytes of a string
+    for b in "नमस्ते".bytes() {
+        println!("{}", b);
+    }
 }
