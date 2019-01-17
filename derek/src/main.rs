@@ -45,7 +45,7 @@ fn main() {
 
     println!("Find best {}", rand_string2.contains("best"));
 
-
+    /*
     'outer: loop {
         let number: i32 = 10;
         println!("Pick a number");
@@ -69,5 +69,40 @@ fn main() {
                 Some(_) => println!("Error")
             }
         }
+    }*/
+
+    let rand_array = [1, 2, 3, 4, 5];
+    println!("{}", rand_array[0]);
+    println!("{}", rand_array.len());
+    println!("Second 2 : {:?}", &rand_array[1..3]);
+
+    let mut vect1 = vec![1, 2, 3, 4];
+
+    for i in &vect1 {
+        println!("Vect: {}", i);
     }
+
+    vect1.push(6);
+    vect1.pop();
+
+    let rand_tuple = ("Derek", 20);
+    let rand_tuple2: (&str, i8) = ("Derek", 40);
+
+    println!("Name: {}", rand_tuple2.0);
+
+    say_hello("Jason");
+    println!("5 + 4 = {}", get_sum(5, 4));
+
+    let sum = get_sum;
+    println!("6 + 4 = {}", sum(6, 4));
+
+    // Closures
+}
+
+fn say_hello(name: &str) {
+    println!("Hello {}", name);
+}
+
+fn get_sum(num1: i32, num2: i32) -> i32 {
+    num1 + num2
 }
