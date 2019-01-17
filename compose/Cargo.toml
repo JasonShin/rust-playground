@@ -1,0 +1,11 @@
+[package]
+name = "compose"
+version = "0.1.0"
+authors = ["Jason Shin <visualbbasic@gmail.com>"]
+edition = "2018"
+
+[lib]
+name = "fp_rust"
+path = "src/lib.rs"
+
+[dependencies]
