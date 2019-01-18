@@ -1,3 +1,9 @@
+use std::fmt::Display;
+
+macro_rules! cm {
+    ($f:ident . $g:ident) => (|x| x.$g().$f())
+}
+
 fn main() {
     let add5 = |x| x + 5;
     let result: i32 = add5(4);
@@ -17,6 +23,14 @@ fn main() {
 
     // Struct is like an object
 
+    // generic struct
+    let car = Car { company: "Hyundai", model: "Sonata", year: 1950 };
+    println!("hyundai! {:?}", car);
+
+    let l1 = vec![1, 2, 3, 4];
+    let l3: Vec<i32> = l1.iter()
+      .map(cm!(abs . neg))
+      .collect();
 }
 
 fn adder(x: i32) -> Box<Fn(i32) -> i32> {
@@ -80,3 +94,43 @@ impl Point {
         self.y += dy;
     }
 }
+
+// Generic struct
+#[derive(Debug)]
+struct Car<T, S, V> {
+    company: T,
+    model: S,
+    year: V,
+}
+
+impl<T, S, V> Car<T, S, V> {
+    fn show(&self) -> String
+        where T: Display,
+              S: Display,
+              V: Display
+    {
+        format!("{} was produced by {} in {}",
+                self.model, self.company, self.year)
+    }
+}
+
+#[derive(Debug)]
+enum Colour {
+    Red,
+    Green,
+    Blue,
+}
+
+/*
+impl Eq for &Colour {
+    fn eq(&self, other: &Colour) -> bool {
+        match (self, other) {
+            (&Colour::Red, &Colour::Red) => true,
+            (&Colour::Blue, &Colour::Blue) => true,
+            (&Colour::Green, &Colour::Green) => true,
+            (_) => false,
+        }
+    }
+}
+*/
+
