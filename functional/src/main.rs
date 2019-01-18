@@ -4,6 +4,10 @@ macro_rules! cm {
     ($f:ident . $g:ident) => (|x| x.$g().$f())
 }
 
+macro_rules! c {
+    ($f:expr , $g:expr) => (|&x| $f($g(x)))
+}
+
 fn main() {
     let add5 = |x| x + 5;
     let result: i32 = add5(4);
@@ -27,9 +31,10 @@ fn main() {
     let car = Car { company: "Hyundai", model: "Sonata", year: 1950 };
     println!("hyundai! {:?}", car);
 
-    let l1 = vec![1, 2, 3, 4];
+    let l1:Vec<i32> = vec![1, 2, 3, 4];
     let l3: Vec<i32> = l1.iter()
-      .map(cm!(abs . neg))
+      .map(cm!(abs . abs))
+      //.map(c!(i32::even, i32::abs))
       .collect();
 }
 
