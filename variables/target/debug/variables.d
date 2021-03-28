@@ -1,1 +1,1 @@
-/home/jason/Desktop/rust_projects/variables/target/debug/variables: /home/jason/Desktop/rust_projects/variables/src/main.rs
+/Users/jasonshin/Desktop/rust-playground/variables/target/debug/variables: /Users/jasonshin/Desktop/rust-playground/variables/src/main.rs
