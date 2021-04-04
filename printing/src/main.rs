@@ -19,4 +19,15 @@ fn main() {
     println!("{:p}", r2);
     println!("{:p}", r3);
     println!("{:p}", r4);
+
+    let father_name = "Vlad";
+    let son_name = "Adrian";
+    let family_name = "Tepes";
+    println!("This is {1} {2} son of {0} {2}", father_name, son_name, family_name);
+
+    println!("{city1} is a city in {country} and {city2} is not a city in {country}",
+        city1="Seoul",
+        city2="Tokyo",
+        country="Korea",
+    );
 }
