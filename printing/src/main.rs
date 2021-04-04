@@ -30,4 +30,15 @@ fn main() {
         city2="Tokyo",
         country="Korea",
     );
+
+    let letter = 'a';
+    println!("{:ㅎ^11}", letter); // 11 characters padding
+    println!("{:ㅎ<11}", letter); // padding left
+    println!("{:ㅎ>11}", letter); // padding right
+
+    let title = "Today's news";
+    println!("{:-^30}", title);
+    let bar = "|";
+    println!("{: <15}{: >15}", bar, bar);
+    println!("{:-<15}{:->15}", "Seoul", "Tokyo");
 }
