@@ -4,4 +4,7 @@ fn main() {
     println!(r###"yoyo C:\Home"###);
     println!("{:?}", b"This looks like a number"); // printed
     println!("{:#?}", b"This looks like a pretty number"); // pretty printed
+
+    println!("{:?}", '행' as u32);
+    println!("\u{D589}");
 }
