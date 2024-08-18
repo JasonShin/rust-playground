@@ -1,0 +1,20 @@
+[package]
+name = "rust-playground"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+color-eyre = "0.6.2"
+sqlx = { version = "0.6.3", features = ["postgres", "mysql", "runtime-tokio-rustls"] }
+tokio = { version = "1.20.0", features = ["rt", "macros", "default"]}
+anyhow = { version = "1.0" }
+lazy_static = "1.4.0"
+async-recursion = "1.0.5"
+futures = "0.3.30"
+r2d2 = "0.8.10"
+serde = { version = "1.0.188", features = ["derive"] }
+serde_json = { version = "1.0.107" }
+tempfile = "3.3.0"
+regex = "1.10.6"

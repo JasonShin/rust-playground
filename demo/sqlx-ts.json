@@ -1,0 +1,1 @@
+{"generate_types":{"enabled":true,"convert_to_camel_case_column_names":true},"connections":{"my_db":{"db_type":"postgres","db_host":"localhost","db_port":5432,"db_user":"postgres","db_pass":"password","db_name":"my_db","pg_search_path":"public"}}}
